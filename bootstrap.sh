@@ -6,7 +6,17 @@ DOTFILES_GIT_REPOSITORY=git@github.com:githubutilities/dotfiles.git
 
 DOTFILES_DIRECTORY_PATH="${INSTALLATION_DIRECTORY}"/$DOTFILES_DIRECTORY_NAME
 
-cd "${INSTALLATION_DIRECTORY}"
+# create INSTALLATION_DIRECTORY if not existed
+if [ ! -e "${INSTALLATION_DIRECTORY}" ]; then
+	mkdir "${INSTALLATION_DIRECTORY}"
+fi
+
+cd "${INSTALLATION_DIRECTORY}" 2> /dev/null
+
+if [ $? -ne 0 ]; then
+	echo "${INSTALLATION_DIRECTORY}" "cannot be created"
+	exit 0
+fi
 
 if [ ! -e $DOTFILES_DIRECTORY_NAME ]; then
 	git clone $DOTFILES_GIT_REPOSITORY $DOTFILES_DIRECTORY_NAME;
