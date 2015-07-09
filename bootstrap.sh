@@ -2,7 +2,7 @@
 
 INSTALLATION_DIRECTORY="${HOME}"/Developer
 DOTFILES_DIRECTORY_NAME=dotfiles
-DOTFILES_GIT_REPOSITORY=git@github.com:githubutilities/dotfiles.git
+DOTFILES_GIT_REPOSITORY=https://github.com/githubutilities/dotfiles.git
 
 DOTFILES_DIRECTORY_PATH="${INSTALLATION_DIRECTORY}"/$DOTFILES_DIRECTORY_NAME
 
