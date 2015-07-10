@@ -24,7 +24,7 @@ if [ ! -e $DOTFILES_DIRECTORY_NAME ]; then
 	echo ""
 
 	echo "Symlink dotfiles into " "${HOME}"/$DOTFILES_DIRECTORY_NAME;
-	ln -i $DOTFILES_DIRECTORY_PATH "${HOME}"/$DOTFILES_DIRECTORY_NAME;
+	ln -is $DOTFILES_DIRECTORY_PATH "${HOME}";
 	echo "";
 
 	./bootstrap.sh --force;
